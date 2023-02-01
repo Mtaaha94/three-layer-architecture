@@ -22,6 +22,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/api/projects', require('./routes/projectRoutes'));
+app.use('/api/user', require('./routes/UserRoute'));
 
 app.use(errorHandler)
 

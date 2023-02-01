@@ -92,7 +92,7 @@ export const getAllPost = async (
   try {
     const getPosts = await Post.find()
       .select("_id title description vote createdAt updatedAt")
-    //   .populate("user", "username name surname");
+      .populate("user", "username name surname");
 
     if (getPosts) {
       res.status(200).json(getPosts);
@@ -140,7 +140,7 @@ export const getPost = async (
     } else {
       const getPosts = await Post.findById(postIdValidation)
         .select("_id title description vote createdAt updatedAt")
-        // .populate("user", "username name surname");
+        .populate("user", "username name surname");
 
       if (getPosts) {
         res.status(200).json(getPosts);
